@@ -1349,7 +1349,7 @@ MonoBehaviour:
         m_MethodName: Load
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 102900000, guid: d93f3be0683e7e64e8c6e484757abea2, type: 3}
+          m_ObjectArgument: {fileID: 102900000, guid: 013a69040945fee4ab5abf31847adef1, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
           m_IntArgument: 0
           m_FloatArgument: 0

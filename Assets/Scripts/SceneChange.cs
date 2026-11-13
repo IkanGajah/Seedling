@@ -1,9 +1,10 @@
-using System;
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class SceneChange : MonoBehaviour
 {
@@ -14,10 +15,19 @@ public class SceneChange : MonoBehaviour
         StartCoroutine(FadeOut());
     }
 
-    public void Load(SceneAsset sceneAsset) {
-        string sceneName = sceneAsset.name;
+    // Runtime entry point: call this from any other script.
+    public void Load(string sceneName)
+    {
         StartCoroutine(Loader(sceneName));
     }
+
+#if UNITY_EDITOR
+    // Kept so existing editor / button usage with a SceneAsset still works.
+    public void Load(SceneAsset sceneAsset)
+    {
+        Load(sceneAsset.name);
+    }
+#endif
 
     private IEnumerator Loader(string sceneName)
     {
