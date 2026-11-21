@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private State state;
     private float waitingToStartTimer = 2f;
     private float gamePlayingTimer = 100f;
+    private bool isSpecialEnemySpawned = false;
 
     private void Awake()
     {
@@ -34,6 +35,10 @@ public class GameManager : MonoBehaviour
             case State.GameOver:
                 break;
             
+        }
+
+        if(gamePlayingTimer <= 50f) {
+            isSpecialEnemySpawned = true;
         }
     }
 
